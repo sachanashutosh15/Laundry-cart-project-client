@@ -1,5 +1,7 @@
 section{
     display: flex;
+    border-bottom: 2px solid #5861AE;
+    box-sizing: border-box;
 }
 aside{
     display:flex;
@@ -7,32 +9,182 @@ aside{
     justify-content: center;
     align-content: center;
     width:50vw;
-    background-color: rgb(175, 175, 235);
 }
 article{
     width:50vw;
-    background-color: rgb(181, 237, 141);
+    background-color:#B9C0FD1A;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 article,aside{
     height:80vh;
 }
 .combined-1{
+    margin:0 auto;
     margin-top:-60px;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin:0 auto;
+    
 }
 .combined-2{
     margin-top:40px;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 30px;
-    margin:0 auto;
+    margin:0 195px;
 }
 .register{
-    margin:0;
     margin-top:20px;
-    
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+    border: 2px solid #4552C1;
+    border-radius: 4px;
+    opacity: 1;
+    box-sizing: border-box;
+    text-align: center;
+    font: normal normal bold 15px/20px Open Sans;
+    letter-spacing: 0.3px;
+    color: #4552C1;
+    opacity: 1;
+}
+.laundry-service-heading-text{
+    font: normal normal 900 100px/120px Avenir;
+    letter-spacing: 0px;
+    color: #5861AE;
+    text-transform: capitalize;
+    opacity: 1;
+}
+input:focus {
+    border-bottom: 1px solid rgb(29, 27, 175) ;
+    box-shadow: 0 1px 0 0 rgb(29, 27, 175) ;
+    width:10px;
+}
+
+
+
+
+.padlock-text{
+    display: flex;
+    justify-content: space-between;
+}
+.side-border{
+    border-left: 2px solid #9097db;
+    box-sizing: border-box;
+}
+.form-div{
+    margin-left:140px;
+}
+.sign-in-text-div{
+    font: normal normal medium 32px/60px Avenir;
+    letter-spacing: 1.28px;
+    color: #4552C1;
+    text-transform: uppercase;
+    opacity: 1;
+    margin-left:140px;
+    margin-bottom: 30px;
+}
+.mobile-email-text,.password-text{
+    font: normal normal normal 12px/15px Open Sans;
+    letter-spacing: 0.42px;
+    color: #5861AE;
+    opacity: 1;
+}
+.forget-password-text{
+    font: normal normal medium 16px/26px Avenir;
+    letter-spacing: 0.64px;
+    color: #4552C1;
+    text-transform: capitalize;
+    opacity: 1;
+    margin-left:258px;
+}
+.sign-in-button-div{
+    margin-left: 230px;
+}
+.sign-in-button-div button{
+    background: #5861AE 0% 0% no-repeat padding-box;
+    opacity: 1;
+    width: 150px;
+    height: 50px;
+    color: white;
+}
+
+
+
+
+.referral-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: #F8F9FF 0% 0% no-repeat padding-box;
+    box-shadow: 0px -3px 6px #0000000B;
+    opacity: 1;
+    padding-top:14px;
+    padding-bottom: 10px;
+}
+.referral-msg-1{
+    text-align: left;
+    font: normal normal 600 24px/26px Open Sans;
+    letter-spacing: 0.96px;
+    color: #5861AE;
+    opacity: 1;
+    margin-top:-2px;
+}
+.referral-msg-2{
+    text-align: left;
+    font: italic normal normal 10px/26px Open Sans;
+    letter-spacing: 0.4px;
+    color: #3D3D43;
+    opacity: 1;
+    margin-top:-24px;
+}
+
+
+
+.disclaimer-div{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background: transparent url('../Images/Footer.svg') 0% 0% no-repeat padding-box;
+    opacity: 1;
+
+}
+.inside-disclaimer-div{
+    display: flex;
+    flex-direction: column;
+}
+.inside-disclaimer-div > h4{
+    font: normal normal medium 18px/24px Avenir;
+    letter-spacing: 0.18px;
+    color: #182838;
+    text-transform: uppercase;
+    opacity: 1;
+    font-size: small;
+    font-weight: bold;
+}
+.inside-disclaimer-div > h6{
+    font: normal normal normal 14px/24px Avenir;
+    letter-spacing: 0.14px;
+    color: #182838;
+    text-transform: capitalize;
+    opacity: 1;
+}
+.logo-div:hover{
+    cursor: pointer;
+}
+
+
+
+.footer{
+    background: #182838 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    opacity: 1;
+    color: white;
+    text-align: center;
 }

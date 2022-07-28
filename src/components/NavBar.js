@@ -1,16 +1,24 @@
 import React from "react";
 import "./NavBar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const NavBar = () =>{
     return(
         <nav>
             <div className="nav-wrapper white">
-                <Link to="#" className="brand-logo" style={{marginLeft:"50px"}}>laundry</Link>
+                <NavLink to="#" className="brand-logo" style={{marginLeft:"50px"}}>laundry</NavLink>
                 <ul id="nav-mobile" className="right">
-                    <li><Link to="/login">Login</Link></li>
-                    <li><Link to="/signup">SignUp</Link></li>
-                    <li><Link to="profile">Profile</Link></li>
-                    <li><Link to="create-post">Create post</Link></li>
+                    <li><NavLink to="/redirect1" style={({isActive})=>{
+                        return {backgroundColor:isActive?"#5861AE":"white"}
+                    }}>Home</NavLink></li>
+                    <li><NavLink to="/redirect2" style={({isActive})=>{
+                        return {backgroundColor:isActive?"#5861AE":"white"}
+                    }}>Pricing</NavLink></li>
+                    <li><NavLink to="redirect3" style={({isActive})=>{
+                        return {backgroundColor:isActive?"#5861AE":"white"}
+                    }}>Career</NavLink></li>
+                    <li><NavLink to="/" style={({isActive})=>{
+                        return {backgroundColor:isActive?"#5861AE":"white"}
+                    }}>Sign In</NavLink></li>
                 </ul>
             </div>
         </nav>
