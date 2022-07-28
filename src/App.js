@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter,Routes,Route,Navigate} from "react-router-dom";
 import NavBar from "./components/NavBar";
-import Login from "./pages/Login";
+import FrontPage from "./pages/FrontPage";
 import "./App.css";
 
 function App() {
@@ -9,11 +9,9 @@ function App() {
     <BrowserRouter>
       <NavBar></NavBar>
       <Routes>
-        <Route exact path="/" element={<Login></Login>}></Route>
-        <Route
-          path="*"
-          element={<Navigate to="/" replace />}
-        />
+        <Route exact path="/" element={<FrontPage></FrontPage>}></Route>
+
+
       </Routes>
     </BrowserRouter>
   )
