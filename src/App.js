@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import {BrowserRouter,Routes,Route,Navigate} from "react-router-dom";
 import NavBar from "./components/NavBar";
@@ -15,6 +16,17 @@ function App() {
       </Routes>
     </BrowserRouter>
   )
+=======
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+      </header>
+    </div>
+  );
+>>>>>>> cb71a50 (cleaned the branch)
 }
 
 export default App;
