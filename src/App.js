@@ -1,13 +1,16 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import {BrowserRouter,Routes,Route,Navigate} from "react-router-dom";
 import FrontPage from "./pages/FrontPage";
 import "./App.css";
+import CreateOrder from "./pages/createOrders/createOrders";
+import PastOrders from "./pages/PastOrders/pastOrders";
 
 function App() {
   return (
     <BrowserRouter>
-      <NavBar></NavBar>
+    <NavBar/>
       <Routes>
         <Route exact path="/" element={<FrontPage></FrontPage>}></Route>
         <Route
@@ -15,6 +18,9 @@ function App() {
           element={<Navigate to="/" replace />}
         />
 
+        <Route path="/" element={<FrontPage />} />
+        <Route path='/user/orders' element={ <PastOrders /> } />
+        <Route path='/user/newOrder' element={ <CreateOrder /> } />
       </Routes>
     </BrowserRouter>
   )

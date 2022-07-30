@@ -1,0 +1,9 @@
+#createOrderContainer {
+  display: flex;
+}
+
+.main-container {
+  background-color: #FEFFFF;
+  width: calc(100% - 4rem);
+  display: inline-block;
+}
