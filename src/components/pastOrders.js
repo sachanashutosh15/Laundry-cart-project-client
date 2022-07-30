@@ -25,34 +25,52 @@ const PastOrders = () => {
     return data.map(user => {
       return (
         <tr>
-          <td>{user.userId}</td>
           <td>{user.orderId}</td>
           <td>{user.timeStamp}</td>
           <td>{JSON.parse(user.storeInfo).address}</td>
-          <td>{user.userAddress}</td>
+          <td>{JSON.parse(user.storeInfo).city}</td>
+          <td>{JSON.parse(user.storeInfo).phone}</td>
+          <td>10</td>
+          <td>Rs</td>
           <td>{user.status}</td>
+          <td>hhh</td>
         </tr>
       )
     })
   }
 
   return (
+    <>
     <div>
-      <h1 id="title">API Table</h1>
+      {/* <h1 id="title">API Table</h1> */}
+      <div className = 'head'>
+        <div>
+        <p>Order | 0 </p>
+        </div>
+        <div className="search">
+          <div><button>create</button></div>
+          <div><input></input></div>
+        </div>
+      </div>
       <table id="users">
         <thead>
-          <tr>
-            <th>userId</th>
-            <th>orderId</th>
-            <th>Time and Date</th>
-            <th>storeInfo</th>
-            <th>userAddress</th>
-            <th>status</th>
+          <tr >
+            <th style={{bgcolor :"black",color:"white" }}>orderId</th>
+            <th>Order Date & Time</th>
+            <th>Store Location</th>
+            <th>City</th>
+            <th>Store phone</th>
+            <th>Total Items</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>View</th>
           </tr>
+          
         </thead>
         <tbody>{renderTable()}</tbody>
       </table>
     </div>
+    </>
   )
 }
 export default PastOrders;
