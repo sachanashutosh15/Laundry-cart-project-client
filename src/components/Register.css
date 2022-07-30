@@ -1,45 +1,52 @@
-section{
+section {
     display: flex;
     border-bottom: 2px solid #5861AE;
     box-sizing: border-box;
 }
-aside{
-    display:flex;
+
+aside {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    width:50vw;
+    width: 50vw;
 }
-article{
-    width:50vw;
-    background-color:#B9C0FD1A;
-    display:flex;
+
+article {
+    width: 50vw;
+    background-color: #B9C0FD1A;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
 }
-article,aside{
-    height:80vh;
+
+article,
+aside {
+    height: 80vh;
 }
-.combined-1{
-    margin:0 auto;
-    margin-top:-60px;
+
+.combined-1 {
+    margin: 0 auto;
+    margin-top: -60px;
     margin-bottom: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
 }
-.combined-2{
-    margin-top:40px;
+
+.combined-2 {
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 30px;
-    margin:0 195px;
+    margin: 0 195px;
 }
-.register{
-    margin-top:20px;
+
+.register {
+    margin-top: 20px;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 30px;
@@ -53,66 +60,75 @@ article,aside{
     color: #4552C1;
     opacity: 1;
 }
-.laundry-service-heading-text{
+
+.laundry-service-heading-text {
     font: normal normalAvenir;
     letter-spacing: 0px;
     color: #5861AE;
     text-transform: capitalize;
     opacity: 1;
 }
+
 input:focus {
-    border-bottom: 1px solid rgb(29, 27, 175) ;
-    box-shadow: 0 1px 0 0 rgb(29, 27, 175) ;
-    width:10px;
+    border-bottom: 1px solid rgb(29, 27, 175);
+    box-shadow: 0 1px 0 0 rgb(29, 27, 175);
+    width: 10px;
 }
 
 
 
 
 
-.padlock-img:hover{
-    cursor:pointer;
+.padlock-img:hover {
+    cursor: pointer;
 }
 
 
 
-.side-border{
+.side-border {
     border-left: 2px solid #9097db;
     box-sizing: border-box;
 }
-.form-div{
-    margin-left:140px;
-    display:flex;
+
+.form-div {
+    margin-left: 140px;
+    display: flex;
     flex-direction: row;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
-.sign-in-text-div{
+
+.sign-in-text-div {
     font: normal normal medium 32px/60px Avenir;
     letter-spacing: 1.28px;
     color: #4552C1;
     text-transform: uppercase;
     opacity: 1;
-    margin-left:140px;
+    margin-left: 80px;
     margin-bottom: 30px;
 }
-.mobile-email-text,.password-text{
+
+.mobile-email-text,
+.password-text {
     font: normal normal normal 12px/15px Open Sans;
     letter-spacing: 0.42px;
     color: #5861AE;
     opacity: 1;
 }
-.forget-password-text{
+
+.forget-password-text {
     font: normal normal medium 16px/26px Avenir;
     letter-spacing: 0.64px;
     color: #4552C1;
     text-transform: capitalize;
     opacity: 1;
-    margin-left:258px;
+    margin-left: 258px;
 }
-.sign-in-button-div{
+
+.sign-in-button-div {
     margin-left: 230px;
 }
-.sign-in-button-div button{
+
+.sign-in-button-div button {
     background: #5861AE 0% 0% no-repeat padding-box;
     opacity: 1;
     width: 150px;
@@ -120,4 +136,10 @@ input:focus {
     color: white;
 }
 
-
+.terms-conditions-text {
+    text-decoration: underline;
+    font: normal normal normal 14px/20px Open Sans;
+    letter-spacing: 0.49px;
+    color: #5861AE;
+    opacity: 1;
+}

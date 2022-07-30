@@ -1,9 +1,7 @@
 .footer{
     background: #182838 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
     opacity: 1;
     color: white;
     text-align: center;
 }
-    /* width: 100%;
-    padding: 0.5rem 0;
-} */

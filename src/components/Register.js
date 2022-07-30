@@ -108,9 +108,9 @@ function Register(props) {
                         <h4>REGISTER</h4>
                     </div>
                     <div className='side-border'>
-                        <div className='form-div' style={{margin:"0 auto"}}>
+                        <div className='form-div' style={{ margin: "0 auto" }}>
 
-                            <div style={{ marginBottom: "20px",marginLeft:"80px" }}>
+                            <div style={{ marginBottom: "20px", marginLeft: "80px" }}>
                                 <div className="name-text" style={{ marginBottom: "-24px", fontSize: "11px" }}>Name</div>
                                 <br />
                                 <input
@@ -133,7 +133,7 @@ function Register(props) {
                                     style={{ width: "400px" }}
                                 />
                             </div>
-                            <div style={{ marginBottom: "20px",marginLeft:"80px" }}>
+                            <div style={{ marginBottom: "20px", marginLeft: "80px" }}>
                                 <div className="phone-text" style={{ marginBottom: "-24px", fontSize: "11px" }}>Phone</div>
                                 <br />
                                 <input
@@ -155,7 +155,7 @@ function Register(props) {
                                     style={{ width: "400px" }}
                                 />
                             </div>
-                            <div style={{ marginBottom: "20px" ,marginLeft:"80px"}}>
+                            <div style={{ marginBottom: "20px", marginLeft: "80px" }}>
                                 <div className="district-text" style={{ marginBottom: "-24px", fontSize: "11px" }}>District</div>
                                 <br />
                                 <input
@@ -177,7 +177,7 @@ function Register(props) {
                                     style={{ width: "400px" }}
                                 />
                             </div>
-                            <div  style={{ marginBottom: "20px" ,marginLeft:"80px"}}>
+                            <div style={{ marginBottom: "20px", marginLeft: "80px" }}>
                                 <div className="pincode-text" style={{ marginBottom: "-24px", fontSize: "11px" }}>Pincode</div>
                                 <br />
                                 <input
@@ -194,8 +194,13 @@ function Register(props) {
                             </div>
                         </div>
                     </div>
-
-                    <div className='sign-in-button-div' style={{ marginTop: "80px", marginLeft: "500px" }}>
+                    <p style={{margin:"0 auto",marginTop:"12px"}}>
+                        <label>
+                            <input id="indeterminate-checkbox" type="checkbox" />
+                            <span className="terms-conditions-text">I agree to Terms & Condition receiving marketing and promotional materials</span>
+                        </label>
+                    </p>
+                    <div className='sign-in-button-div' style={{margin: "0 auto", marginTop: "60px" }}>
                         <button onClick={() => { register() }}>Register</button>
                     </div>
                 </article>

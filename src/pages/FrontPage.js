@@ -20,6 +20,7 @@ function FrontPage() {
     if (childData === true) {
         return (
             <>
+                <NavBar/>
                 <Login passData={passData}/>
                 <Referral></Referral>
                 <Disclaimer></Disclaimer>
@@ -30,12 +31,8 @@ function FrontPage() {
 
     return (
         <>
-<<<<<<< HEAD
+            <NavBar/>
             <Register passData={passData} />
-=======
-            <NavBar />
-            {toggle === true?<Login setToggle={setToggle} />:<Register setToggle={setToggle} />}
->>>>>>> 5e065822c38a60581cc73cd3dc9209bf548be65d
             <Referral></Referral>
             <Disclaimer></Disclaimer>
             <Footer></Footer>
@@ -46,4 +43,3 @@ function FrontPage() {
 }
 
 export default FrontPage;
-

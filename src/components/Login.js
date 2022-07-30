@@ -6,19 +6,24 @@ import { Link,useNavigate } from 'react-router-dom';
 import padlockLogo from "../Images/padlock.svg";
 import M from "materialize-css";
 
+
 function Login(props) {
     const value = false;
-    // const navigate = useNavigate();
-    
-    const [email, setEmail] = useState("");
+    const navigate = useNavigate();
+    let check="1";
+    const [emailormobile, setEmailOrMobile] = useState("");
     const [password, setPassword] = useState("");
     const buttonClickHandler = () => {
         props.passData(value);
     }
     const login = (e) => {
-        if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
-            M.toast({ html: "enter valid email", classes: "#ff1744 red accent-3" })
-            return;
+        if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(emailormobile)) {
+            
+            if(!/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(emailormobile)){
+                M.toast({ html: "enter valid email/mobile", classes: "#ff1744 red accent-3" })
+                return;
+            }
+            check="0";
         }
         fetch("http://localhost:3001/login", {
             method: "post",
@@ -26,8 +31,9 @@ function Login(props) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                email: email,
-                password:password
+                emailormobile: emailormobile,
+                password:password,
+                check:check,
             })
         })
             .then((response) => response.json())
@@ -41,7 +47,7 @@ function Login(props) {
                 }
                 else {
                     M.toast({ html: "Login Successfully", classes: "#2e7d32 green darken-3" })
-                    // navigate("/");
+                    navigate("/user/orders");
                     console.log("navigate to home page");
                 }
             })
@@ -86,8 +92,8 @@ function Login(props) {
                                 <input
                                     type="text"
                                     placeholder='89 18 63 06 43'
-                                    value={email}
-                                    onChange={(event) => setEmail(event.target.value)}
+                                    value={emailormobile}
+                                    onChange={(event) => setEmailOrMobile(event.target.value)}
                                     style={{ width: "400px" }}
                                 />
                             </div>

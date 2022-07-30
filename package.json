@@ -6,11 +6,8 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
-<<<<<<< HEAD
     "bootstrap": "^5.2.0",
-=======
     "axios": "^0.27.2",
->>>>>>> 5e065822c38a60581cc73cd3dc9209bf548be65d
     "materialize-css": "^1.0.0-rc.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -33,7 +30,7 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
+      "0.2%",
       "not dead",
       "not op_mini all"
     ],
