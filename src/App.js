@@ -11,12 +11,6 @@ function App() {
     <BrowserRouter>
     
       <Routes>
-        <Route exact path="/" element={<FrontPage></FrontPage>}></Route>
-        <Route
-          path="*"
-          element={<Navigate to="/" replace />}
-        />
-
         <Route path="/" element={<FrontPage />} />
         <Route path='/user/orders' element={ <PastOrders /> } />
         <Route path='/user/newOrder' element={ <CreateOrder /> } />
