@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import Login from '../components/Login';
 import Referral from '../components/Referral';
 import Disclaimer from '../components/Disclaimer';
@@ -7,18 +7,39 @@ import Register from '../components/Register';
 import NavBar from '../components/NavBar';
 
 
-function FrontPage({val}) {
-    const [toggle,setToggle]=useState(true);
-    console.log(toggle);
+function FrontPage() {
+    const [childData, setChildData] = useState(true);
+
+    const passData = (data) => {
+        console.log("suraj")
+        setChildData(data);
+
+    };
+    // console.log(toggle)
+
+    if (childData === true) {
+        return (
+            <>
+                <NavBar/>
+                <Login passData={passData}/>
+                <Referral></Referral>
+                <Disclaimer></Disclaimer>
+                <Footer></Footer>
+            </>
+        )
+    }
+
     return (
         <>
-            <NavBar />
-            {toggle === true?<Login setToggle={setToggle} />:<Register setToggle={setToggle} />}
+            <NavBar/>
+            <Register passData={passData} />
             <Referral></Referral>
             <Disclaimer></Disclaimer>
             <Footer></Footer>
         </>
     )
+
+
 }
 
 export default FrontPage;
