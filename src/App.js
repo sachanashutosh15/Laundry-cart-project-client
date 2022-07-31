@@ -2,8 +2,6 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import FrontPage from "./pages/FrontPage";
 import "./App.css";
-// import PastOrders from "./pages/PastOrders/pastOrders";
-import LeftSidebar from "./components/LeftSidebar"
 import CreateOrder from "./pages/createOrders/createOrders";
 import PastOrders from "./pages/PastOrders/pastOrders";
 

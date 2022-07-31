@@ -1,7 +1,9 @@
 import React from 'react';
 import './OrderCreatorDiv.css'
+import Popup from "../popUp/PopUp";
 
 const OrderCreatorDiv = () => {
+  const [ popup, setPopup ] = React.useState(false);
   const itemsArray = [
     {
       name: "Shirt",
@@ -34,29 +36,30 @@ const OrderCreatorDiv = () => {
   ];
   return (
     <>
-    <div id='orderCreator'>
-      <div className="textDiv">
-        <p style={{ color: "#1E2022" }}>Create Order</p>
+      <div id='orderCreator'>
+        <div className="textDiv">
+          <p style={{ color: "#1E2022" }}>Create Order</p>
 
-        <div className="searchContainer">
-          <img className='lensImg' src="/images/search.svg" />
-          <input id="searchInput" type='text' />
+          <div className="searchContainer">
+            <img id="search" className='lensImg' src="/images/search.svg" />
+            <input id="searchInput" type='text' />
+          </div>
+        </div>
+        <div id='tableContainer'>
+          <div id='tableHead'>
+            <div id="item1">Product Type</div>
+            <div id="item2">Quantity</div>
+            <div id="item3">Wash Type</div>
+            <div id="item4">Price</div>
+          </div>
+          {itemsArray.map(item => (<ItemRow info={item} key={item.name} />))}
+        </div>
+        <div className="buttonContainer">
+          <button className="button">Cancel</button>
+          <button className="button" onClick={() => (setPopup(true))}>Proceed</button>
         </div>
       </div>
-      <div id='tableContainer'>
-        <div id='tableHead'>
-          <div id="item1">Product Type</div>
-          <div id="item2">Quantity</div>
-          <div id="item3">Wash Type</div>
-          <div id="item4">Price</div>
-        </div>
-        {itemsArray.map(item => (<ItemRow info={item} key={item.name} />))}
-      </div>
-      <div className="buttonContainer">
-        <button className="button">Cancel</button>
-        <button className="button">Proceed</button>
-      </div>
-    </div>
+      <Popup trigger={popup} setTrigger={setPopup} />
     </>
   );
 }
@@ -72,7 +75,7 @@ const ItemRow = (props) => {
           </div>
         </div>
         <div className="inputDiv">
-          <div className="input"><input className="quantityInput" type="number" style={{ border: "none" }} /></div>
+          <input className="quantityInput browser-default" type="number" placeholder="0" />
         </div>
         <div className="washtype">
           <img className="washtypeImage" src={'/images/washing-machine.svg'} alt="" />
