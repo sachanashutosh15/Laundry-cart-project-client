@@ -39,14 +39,15 @@ function Login(props) {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                console.log("suraj");
-                console.log(data.error);
+                
                 if (data.error) {
                     console.log("singh");
                     M.toast({ html: data.error, classes: "#ff1744 red accent-3" })
                 }
                 else {
                     M.toast({ html: "Login Successfully", classes: "#2e7d32 green darken-3" })
+                    localStorage.setItem("token",data.token)
+                    localStorage.setItem("userInfo",JSON.stringify(data.userInfo))
                     navigate("/user/orders");
                     console.log("navigate to home page");
                 }
