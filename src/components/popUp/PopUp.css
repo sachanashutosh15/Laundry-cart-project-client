@@ -1,0 +1,94 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 40%;
+  height: 100vh;
+  width: 60%;
+  background-color: white;
+  z-index: 10;
+  font-family: sans-serif;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.popup-close {
+  font-size: 40px;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+.head {
+  font-size: 30px;
+  background-color: #5861AE;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+  align-items: center;
+  padding: 0 18px;
+}
+
+.addressBar {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  background-color: #F4F9FF;
+}
+
+.dropdown {
+  height: 3rem;
+  width: 10rem;
+  border: none;
+  background-color: white;
+}
+
+.disabled {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.storeDetail {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.addressBarContent {
+  width: 30%;
+}
+
+.orderDetails {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.orderDetailsRow {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
+  padding-right: 1rem;
+}
+
+h6 {
+  font-size: 20px;
+}
+
+.finalPrice {
+  color: #5861ae;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.priceCalculation {
+  display: flex;
+}

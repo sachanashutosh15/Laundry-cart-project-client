@@ -72,27 +72,15 @@
   width: 15%;
 }
 
-.input {
-  display: flex;
-  width: 4rem;
-  height: 2rem;
-  border: 1px solid #5861AE;
-  border-radius: 2px;
-}
-
 .quantityInput {
-  position: relative;
-  bottom: 10px;
+  height: 2rem;
+  width: 4rem;
+  border: 2px solid #5861ae;
+  text-align: center;
 }
 
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
-    margin: 0;
-}
-
-.quantityInput {
-  text-align: center;
-  border: none;
 }
 
 #item3 {
