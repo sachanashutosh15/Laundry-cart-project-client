@@ -25,7 +25,7 @@
   color: white;
 }
 
-.head {
+.popUpHead {
   font-size: 30px;
   background-color: #5861AE;
   color: white;
@@ -50,6 +50,15 @@
   background-color: white;
 }
 
+.dropdown:focus {
+  border: none;
+  border-bottom: 1px solid #5861AE;
+}
+
+.dropdown:focus-visible {
+  outline: none;
+}
+
 .disabled {
   color: rgba(0, 0, 0, 0.3);
 }
@@ -71,7 +80,6 @@
 
 .orderDetailsRow {
   display: flex;
-  flex-direction: row;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   align-items: center;
   justify-content: space-between;
@@ -79,16 +87,63 @@
   padding-right: 1rem;
 }
 
+.subTotal {
+  display: flex;
+  justify-content: end; 
+}
+
+.subTotalContent {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  width: 250px;
+  height: 3rem;
+  padding-right: 1rem; 
+}
+
 h6 {
   font-size: 20px;
 }
 
 .finalPrice {
+  display: flex;
+  justify-content: end;
   color: #5861ae;
   font-weight: bold;
-  margin-left: 1rem;
+  width: 5rem;
+}
+
+.totalPrice {
+  display: flex;
+  justify-content: end;
+  font-size: 1.2rem;
+  height: 3rem;
+  padding: 0;
 }
 
 .priceCalculation {
   display: flex;
+}
+
+.popupFooter {
+  height: 4rem;
+  background-color: #F4F4F4;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.popupFooter > .button {
+  background-color: #5861ae;
+  color: white;
+}
+
+.popupFooter > .button:hover {
+  outline: 1px solid #5861ae;
 }

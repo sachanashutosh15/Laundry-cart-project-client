@@ -1,6 +1,3 @@
-tr{
-    text-align: center;
-}
 .head{
     display: flex;
     justify-content: space-between;
@@ -8,22 +5,6 @@ tr{
 .search{
     display: flex;
     margin-right: 2rem;
-}
-button{
-    margin: 1rem;
-    width: 5rem;
-    height: 2rem;
-}
-table{
-    border: 1px solid rgba(245, 245, 245, 1);
-    /* background-color: black;
-    color: white; */
-}
-input{
-    width: 3rem;
-    /* background: url('../Images/search.jpg')  0% 0% no-repeat padding-box; */
-    /* margin: 10px; */
-
 }
 #orderCreator {
     display: flex;
@@ -38,13 +19,6 @@ input{
     margin: 0px 10px;
     width: 131px;
 }
-td{
-    /* margin-left: 5px; */
-    /* text-align: center; */
-    margin-left: 1rem;
-    padding-left: 10px;
-    width: 140px;
-}
 .TwoDiv{
     background-color: rgba(245, 245, 245, 1);
 }
@@ -55,14 +29,4 @@ td{
     padding: 1em 0;
     width: 100%;
     margin-bottom: -17px;
-}
-tr:nth-child(even){
-    background-color: blue;
-}
-.NewFooter{
-    text-align: center;
-    width: 100%;
-    background: #182838 0% 0% no-repeat padding-box;
-border: 1px solid #707070;
-opacity: 1;
 }
