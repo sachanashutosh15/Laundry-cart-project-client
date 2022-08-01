@@ -82,8 +82,8 @@ const OrderCreatorDiv = () => {
           <p style={{ color: "#1E2022" }}>Create Order</p>
 
           <div className="searchContainer">
-            <img id="search" className='lensImg' src="/images/search.svg" />
-            <input id="searchInput" type='text' />
+            <img id="search" className='lensImg ' src="/images/search.svg" />
+            <input  id="searchInput" type='text' />
           </div>
         </div>
         <div id='tableContainer'>

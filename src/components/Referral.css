@@ -6,8 +6,7 @@
     background: #F8F9FF 0% 0% no-repeat padding-box;
     box-shadow: 0px -3px 6px #0000000B;
     opacity: 1;
-    padding-top:14px;
-    padding-bottom: 10px;
+    /* margin-bottom:1rem; */
 }
 .referral-msg-1{
     text-align: left;
@@ -15,7 +14,8 @@
     letter-spacing: 0.96px;
     color: #5861AE;
     opacity: 1;
-    margin-top:-10px;
+    margin-top:1rem;
+    /* margin-bottom:0.2rem; */
 }
 .referral-msg-2{
     text-align: left;
@@ -23,6 +23,7 @@
     letter-spacing: 0.4px;
     color: #3D3D43;
     opacity: 1;
-    margin-top:-30px;
+    /* margin-bottom:0.5rem; */
 }
+
 

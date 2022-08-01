@@ -49,9 +49,72 @@
   height: 3rem;
   width: 3rem;
   border-radius: 1.5rem;
-  margin: 0.5rem;
+  /* margin: 0.5rem; */
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
+} */
+
+
+ #topNavBar {
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+  font-family: Avenir;
+  letter-spacing: 1.6px;
+}
+
+#logo {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4rem;
+  font-size: 24px;
+  font-weight: bolder;
+  color: #5861AE;
+}
+
+#right-container {
+  display: flex;
+  align-items: center;
+}
+
+.navButton {
+  height: 100%;
+  width: 7rem;
+  border: 1px solid rgba(112, 112, 112, 0.2);
+  border-right: none;
+  background-color: white;
+}
+
+.navButton:hover {
+  background-color: #5861ae;
+  color: white;
+} 
+.nav-dropdown{
+  width:4rem;
+  background-color:#6b72b8;
+  transform: translate(-12%,10%);
+  float:right;
+  width:10rem;
+  font-size: 1.5rem;
+  border: 2px solid black;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 1rem;
+}
+.nav-dropdown ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-dropdown ul li a{
+    text-decoration: none;
+   
+}
+.nav-dropdown:hover{
+  cursor: pointer;
+  background-color: #c5caef;
 }

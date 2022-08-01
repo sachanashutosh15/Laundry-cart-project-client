@@ -1,18 +1,59 @@
-li a{
-    color:black !important;
+* {
+  margin: 0px;
+  padding: 0px
 }
-li a:hover {
-    background-color:#5861AE !important;
+
+body {
+  margin: 0px;
+  padding: 0px;
 }
-li {
-    list-style: none;
+
+.nav {
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 2px 48px #0000000F;
+  opacity: 1;
 }
-.brand-logo{
-    font: Avenir;
-    letter-spacing: 1.8px;
-    color: #5861AE !important;
-    text-transform: uppercase;
-    opacity: 1 !important;
-    width: 108px !important;
-    height: 27px !important;
+
+.nav ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.laundry1-text {
+  text-align: left;
+  font: normal normal 900 20px/27px Avenir;
+  letter-spacing: 1.8px;
+  color: #5861AE;
+  text-transform: uppercase;
+  opacity: 1;
+  margin: auto 0;
+  margin-left:5rem;
+}
+
+.nav ul li {
+  text-align: center;
+  font: normal normal normal 14px/19px Avenir;
+  letter-spacing: 1.05px;
+  color: #565657;
+  text-transform: capitalize;
+  opacity: 1;
+  padding: 1.4rem 1.5rem;
+  transition: background-color 0.2s;
+}
+
+.nav ul li:hover {
+  background-color: #5861AE;
+  color: white;
+}
+
+.sign-in-text-1 {
+  background-color: #5861AE;
+
 }
