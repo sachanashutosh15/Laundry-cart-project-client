@@ -1,7 +1,7 @@
 .footer{
-    background: #182838 0% 0% no-repeat padding-box;
-    border: 1px solid #707070;
+    background: #182838;
     opacity: 1;
     color: white;
     text-align: center;
+    padding: 1rem;
 }
