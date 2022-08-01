@@ -1,16 +1,21 @@
 import React from 'react';
 import './OrderCreatorDiv.css'
 import Popup from "../popUp/PopUp";
+import ItemRow from './itemRow';
+import ConfirmCard from '../popUp/confirmCard';
 
 const OrderCreatorDiv = () => {
-  const [ popup, setPopup ] = React.useState(false);
+  const [popups, setPopups] = React.useState({
+    popup: false,
+    confirmCardPopup: false,
+  });
   const itemsArray = [
     {
-      name: "Shirt",
+      name: "Shirts",
       image: "shirt.jpeg",
     },
     {
-      name: "T shirt",
+      name: "T shirts",
       image: "t-shirt.jpeg",
     },
     {
@@ -34,9 +39,45 @@ const OrderCreatorDiv = () => {
       image: "otherClothes.jpg",
     },
   ];
+
+  const initialState = {};
+  for (let i = 0; i < itemsArray.length; i++) {
+    let name = itemsArray[i].name;
+    initialState[name] = {
+      quantity: "",
+      washType: [false, false, false, false],
+      price: 0,
+    };
+  }
+
+  const [orderDetails, setOrderDetails] = React.useState(initialState);
+  const [filteredOrderDetails, setFilteredOrderDetails] = React.useState([]);
+
+  function handleProceed() {
+    if(filteredOrderDetails.length !== 0) {
+      setPopups(prevState => ({...prevState, popup: true}));
+    } else {
+      alert("Please choose some items and then proceed");
+    }
+  }
+
+  React.useEffect(() => {
+    setFilteredOrderDetails([]);
+    Object.keys(orderDetails).forEach(key => {
+      let obj = {};
+      if (orderDetails[key].price !== 0) {
+        obj.name = key;
+        obj.price = orderDetails[key].price;
+        obj.quantity = orderDetails[key].quantity;
+        obj.washType = orderDetails[key].washType;
+        setFilteredOrderDetails(prevDetails => ([...prevDetails, obj]));
+      }
+    })
+  }, [orderDetails])
+
   return (
     <>
-      <div id='orderCreator'>
+      <div id='orderCreatorComponent'>
         <div className="textDiv">
           <p style={{ color: "#1E2022" }}>Create Order</p>
 
@@ -52,43 +93,65 @@ const OrderCreatorDiv = () => {
             <div id="item3">Wash Type</div>
             <div id="item4">Price</div>
           </div>
-          {itemsArray.map(item => (<ItemRow info={item} key={item.name} />))}
+          {itemsArray.map(item => (
+            <ItemRow
+              info={item}
+              key={item.name}
+              setOrderDetails={setOrderDetails}
+              orderDetails={orderDetails}
+              setFilteredOrderDetails={setFilteredOrderDetails}
+              filteredOrderDetails={filteredOrderDetails}
+            />
+          ))}
         </div>
         <div className="buttonContainer">
-          <button className="button">Cancel</button>
-          <button className="button" onClick={() => (setPopup(true))}>Proceed</button>
+          <button className="button browser-default">Cancel</button>
+          <button
+            className="button browser-default"
+            onClick={() => {
+              handleProceed();
+            }}
+          >
+            Proceed
+          </button>
         </div>
       </div>
-      <Popup trigger={popup} setTrigger={setPopup} />
+      <Popup trigger={popups} setTrigger={setPopups} orderDetails={filteredOrderDetails} />
+      <ConfirmCard trigger={popups} setTrigger={setPopups} />
     </>
   );
 }
 
-const ItemRow = (props) => {
-  return (
-    <>
-      <div className='itemsRow'>
-        <div className="imageDiv">
-          <img className="itemImage" src={`/images/${props.info.image}`} />
-          <div>
-            <p>{ props.info.name }</p>
-          </div>
-        </div>
-        <div className="inputDiv">
-          <input className="quantityInput browser-default" type="number" placeholder="0" />
-        </div>
-        <div className="washtype">
-          <img className="washtypeImage" src={'/images/washing-machine.svg'} alt="" />
-          <img className="washtypeImage" src="/images/ironing.svg" alt="" />
-          <img className="washtypeImage" src="/images/towel.svg" alt="" />
-          <img className="washtypeImage" src="/images/bleach.svg" alt="" />
-        </div>
-        <div className="price">
-          <p>___</p>
-        </div>
-      </div>
-    </>
-  );
-}
 
 export default OrderCreatorDiv;
+
+// let obj = {
+//     Shirts: {
+//       quantity: "",
+//       washType: [false, false, false, false],
+//     },
+//     'T shirts': {
+//       quantity: "",
+//       washType: [false, false, false, false],
+//     },
+//     Trousers: {
+//       quantity: "",
+//       washType: [false, false, false, false],
+//     },
+//     Jeans: {
+//       quantity: "",
+//       washType: [false, false, false, false],
+//     },
+//     Boxers: {
+//       quantity: "",
+//       washType: [false, false, false, false],
+//     },
+//     Joggers: {
+//       quantity: "",
+//       washType: [false, false, false, false],
+//     },
+//     Others: {
+//       quantity: "",
+//       washType: [false, false, false, false],
+//     },
+//   }
