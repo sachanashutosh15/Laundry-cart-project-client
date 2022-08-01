@@ -1,9 +1,15 @@
 .disclaimer-div{
+  
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
     background: transparent url('../Images/Footer.svg') 0% 0% no-repeat padding-box;
     opacity: 1;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding:4rem 6rem;
+
+    background-position: center bottom;
 
 }
 .inside-disclaimer-div{

@@ -1,29 +1,34 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import "./Login.css";
-
-
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import padlockLogo from "../Images/padlock.svg";
-import M from "materialize-css";
+
+
 
 
 function Login(props) {
     const value = false;
+    const [errorMsg, setErrorMsg] = useState(false);
+    const [dataError1, setDataError1] = useState("");
+    const [dataError2, setDataError2] = useState(false);
     const navigate = useNavigate();
-    let check="1";
+    let check = "1";
     const [emailormobile, setEmailOrMobile] = useState("");
+    const [data, setData] = useState([]);
     const [password, setPassword] = useState("");
     const buttonClickHandler = () => {
         props.passData(value);
     }
     const login = (e) => {
         if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(emailormobile)) {
-            
-            if(!/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(emailormobile)){
-                M.toast({ html: "enter valid email/mobile", classes: "#ff1744 red accent-3" })
+
+            if (!/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(emailormobile)) {
+
+                console.log("hello suraj");
+                setErrorMsg(true);
                 return;
             }
-            check="0";
+            check = "0";
         }
         fetch("http://localhost:3001/login", {
             method: "post",
@@ -32,24 +37,34 @@ function Login(props) {
             },
             body: JSON.stringify({
                 emailormobile: emailormobile,
-                password:password,
-                check:check,
+                password: password,
+                check: check,
             })
         })
             .then((response) => response.json())
             .then((data) => {
+                setData("thisis the" + data);
                 console.log(data);
-                
+                console.log("suraj");
+                console.log(data.error);
                 if (data.error) {
                     console.log("singh");
-                    M.toast({ html: data.error, classes: "#ff1744 red accent-3" })
+                    setDataError1(data.error);
+                    setDataError2(true);
+                    setTimeout(() => {
+                        setDataError2(false);
+                    }, 3000)
                 }
                 else {
-                    M.toast({ html: "Login Successfully", classes: "#2e7d32 green darken-3" })
-                    localStorage.setItem("token",data.token)
-                    localStorage.setItem("userInfo",JSON.stringify(data.userInfo))
-                    navigate("/user/orders");
-                    console.log("navigate to home page");
+                    localStorage.setItem("token", data.token)
+                    localStorage.setItem("userInfo", JSON.stringify(data.userInfo));
+                    setDataError1(data.result);
+                    setDataError2(true);
+                    setTimeout(() => {
+                        setDataError2(false);
+                        navigate("/user/orders");
+                    }, 3000)
+                    console.log("navigate to login page");
                 }
             })
             .catch((error) => {
@@ -59,62 +74,72 @@ function Login(props) {
     return (
 
         <>
-            <section>
-                <aside style={{ height: "84vh" }}>
-                    <div className='combined-1'>
-                        <div className='laundry-service-heading-div'>
-                            <h1 className='laundry-service-heading-text'>Laundry <br />
-                                Services</h1>
-                        </div>
-                        <div className='doorstep-heading'>
-                            <h5>Doorstep Wash <span>&#38;</span> DryClean Service</h5>
-                        </div>
-                    </div>
-
-                    <div className='combined-2'>
-                        <div>
-                            <h8>Don't Have An Account</h8>
-                        </div>
-                        <div>
-                            <button className='register' onClick={buttonClickHandler}>Register</button>
-                        </div>
-                    </div>
-                </aside>
-
-                <article style={{ height: "84vh" }}>
-                    <div className='sign-in-text-div'>
-                        <h4>SIGN IN</h4>
-                    </div>
-                    <div className='side-border'>
-                        <div className='form-div'>
-                            <div style={{ marginBottom: "35px" }}>
-                                <div className="mobile-email-text" style={{ marginBottom: "-24px", fontSize: "11px" }}>Mobile/Email</div>
-                                <br />
-                                <input
-                                    type="text"
-                                    placeholder='89 18 63 06 43'
-                                    value={emailormobile}
-                                    onChange={(event) => setEmailOrMobile(event.target.value)}
-                                    style={{ width: "400px" }}
-                                />
+            <div className='main-section-1'>
+                <div style={{ backgroundColor: "white" }}>
+                    <div className='section-div-1'>
+                        <div className='inner-div-1'>
+                            <div className='laundry-text-1'>
+                                <h1 >Laundry <br />
+                                    Services</h1>
                             </div>
-                                <TogglePassword password={password} setPassword={setPassword}/>
-                            <div>
-                                
+                            <div className='door-step-text-1'><h5>Doorstep Wash <span>&#38;</span> DryClean Service</h5></div>
+                            <div className='do-not-account-text'><h6>Don't Have An Account</h6></div>
+                            <div >
+                                <button className='register-btn-1' onClick={buttonClickHandler}>Register</button>
                             </div>
                         </div>
                     </div>
-                    <div className='sign-in-button-div' style={{ marginTop: "80px" }}>
-                        <button onClick={() => { login() }}>Sign In</button>
+                </div>
+
+
+
+
+
+
+                <div className='section-div-2'>
+                    <div>
+                        <div className='inner-div-2'>
+                            <div className='backend-msg'>
+                                <div>{dataError2===false?"":dataError1}</div>
+                            </div>
+                            <div className='sign-heading-text-2-div'>
+                                <h4 className='sign-heading-text-2'>SIGN IN</h4>
+                            </div>
+                            <div className='form-div-2'>
+                                <div className='form-div-2-flex'>
+                                    <div>
+                                        <span className='mini-mobile-email-text'>Mobile/Email</span>
+                                        <br />
+                                        <br />
+                                        <input
+                                            className='box-input-field-2'
+                                            type="text"
+                                            placeholder='89 18 63 06 43'
+                                            value={emailormobile}
+                                            onChange={(event) => {
+                                                setEmailOrMobile(event.target.value);
+                                                setErrorMsg(false);
+                                            }}
+                                        />
+                                    </div>
+                                    {errorMsg && <div className='error-correction-page-1-div'><div className='error-correction-page-1-text'>Enter a valid email/phone</div></div>}
+                                    <TogglePassword password={password} setPassword={setPassword} />
+                                </div>
+                            </div>
+                            <div className='sign-in-div'>
+                                <button className='sign-in-btn-1' onClick={() => { login() }}>Sign In</button>
+                            </div>
+                        </div>
+
                     </div>
-                </article>
-            </section>
+                </div>
+            </div>
         </>
 
     )
 }
 
-const TogglePassword = ({password,setPassword}) => {
+const TogglePassword = ({ password, setPassword }) => {
     const [toggle, setToggle] = useState(false);
     const ToggleHandler = () => {
         if (toggle === false) {
@@ -125,19 +150,27 @@ const TogglePassword = ({password,setPassword}) => {
     }
     return (
         <>
-            <div className='padlock-text'>
-                <div className="password-text" style={{ marginBottom: "-2px", fontSize: "11px" }}>Password</div>
-                <div className='padlock-img-div' onClick={ToggleHandler}><img className="padlock-img" src={padlockLogo} alt="padlock" /></div>
+
+
+
+            <div className="lock-input-container">
+                <div>
+                    <span className='mini-password-text'>Password</span>
+                    <br />
+                    <br />
+                    <input
+                        className='box-input-field-2'
+                        type={toggle === false ? "password" : "text"}
+                        placeholder='* * * *'
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                    />
+                </div>
+                <span className="padlock-img" onClick={ToggleHandler}>
+                    {toggle === false ? <i class="fa-solid fa-lock"></i> : <i class="fa-solid fa-lock-open"></i>}
+                </span>
             </div>
-            <input
-                type={toggle===false?"password":"text"}
-                placeholder='* * * *'
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-                style={{ width: "400px" }}
-            />
-            <br />
-            <h6 className='forget-password-text'>Forget Password?</h6>
+            <div className='forget-password-text-1'><div>Forget Password?</div></div>
         </>
     );
 }
