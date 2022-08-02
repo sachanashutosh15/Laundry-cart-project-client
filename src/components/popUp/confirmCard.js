@@ -7,7 +7,7 @@ const ConfirmCard = (props) => {
     <>
       <div className="confirmCard"> 
         <div className="confirmCard-circle">
-
+          <img src="/images/check.svg" style={{height: "4rem"}} />
         </div>
         <div style={{width: "35%", marginBottom: "1rem"}}>
           <h2>Your Order is successfully placed</h2>

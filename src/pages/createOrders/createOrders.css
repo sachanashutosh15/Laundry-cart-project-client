@@ -1,5 +1,6 @@
-#createOrderContainer {
+.createOrderContainer {
   display: flex;
+  width: calc(100% - 4rem);
 }
 
 .main-container {

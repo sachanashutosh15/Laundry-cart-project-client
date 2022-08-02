@@ -77,7 +77,7 @@ const OrderCreatorDiv = () => {
 
   return (
     <>
-      <div id='orderCreatorComponent'>
+      <div className='orderCreatorComponent'>
         <div className="textDiv">
           <p style={{ color: "#1E2022" }}>Create Order</p>
 

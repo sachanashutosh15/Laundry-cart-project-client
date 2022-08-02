@@ -9,7 +9,7 @@ const CreateOrder = () => {
   return (
     <>
       <TopNavBar />
-      <div id='createOrderContainer'>
+      <div className='createOrderContainer'>
         <LeftNavBar />
         <div className="main-container">
           <OrderCreatorDiv />

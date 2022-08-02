@@ -36,19 +36,15 @@ function Login(props) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                emailormobile: emailormobile,
+                emailorphone: emailormobile,
                 password: password,
-                check: check,
             })
         })
             .then((response) => response.json())
             .then((data) => {
+                console.log(data.accessToken)
                 setData("thisis the" + data);
-                console.log(data);
-                console.log("suraj");
-                console.log(data.error);
                 if (data.error) {
-                    console.log("singh");
                     setDataError1(data.error);
                     setDataError2(true);
                     setTimeout(() => {
@@ -56,7 +52,7 @@ function Login(props) {
                     }, 3000)
                 }
                 else {
-                    localStorage.setItem("token", data.token)
+                    localStorage.setItem("token", data.accessToken)
                     localStorage.setItem("userInfo", JSON.stringify(data.userInfo));
                     setDataError1(data.result);
                     setDataError2(true);

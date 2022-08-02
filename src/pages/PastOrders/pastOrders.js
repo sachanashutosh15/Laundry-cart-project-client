@@ -4,41 +4,53 @@ import "./pastOrders.css"
 import TopNavBar from '../../components/topNavBarSignedIn/topNavBar';
 import LeftNavBar from "../../components/leftNavBar/leftNavBar";
 import { Link } from "react-router-dom";
+import AfterDelete from "../../components/popupDelete/AfterDelete";
+import ConfirmDelete from "../../components/popupDelete/confirmDeletePopup";
 const PastOrders = () => {
   const url = 'http://localhost:3001/orders'
 
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
+  const [deletePopup, setDeletePopup] = useState(false);
+  const [deletePopupInfo, setDeletePopupInfo] = useState({});
+  const [confirmDeletePopup, setConfirmDeletePopup] = useState(false);
 
   useEffect(() => {
-    fetch(url)
+    fetch(url, {
+      headers: {
+        authorization: `bearer ${localStorage.getItem('token')}`,
+      }
+    })
       .then(data => data.json())
       .then(data => {
         console.log(data);
         setData(data)
       })
-  }, [])
-  const oncliked = () => {
+  }, [confirmDeletePopup])
 
+  function handleDelete(e) {
+    let targetOrderId = e.target.attributes.orderId.value;
+    setDeletePopupInfo(data.filter(order => order.orderId === targetOrderId));
+    setDeletePopup(true);
   }
-  // const renderTable = () => {
 
   return (
     <>
       <TopNavBar />
-      <div className="TwoDiv">
+      <div className="createOrderContainer">
         <LeftNavBar />
-        <div id='orderCreator'>
+        <div className="main-container">
+        <div class='orderCreatorComponent'>
           <div className="textDiv">
             <p style={{ color: "#1E2022" }}>Order | 0 </p>
 
-            <div className="searchContainer">
-              <Link to='/user/newOrder'><button>Create</button></Link>
+            <div className="pastOrderSearchContainer">
+              <Link to='/user/newOrder'><button className="button">Create</button></Link>
               <img className='lensImg' src="/images/search.svg" />
               <input id="searchInput" type='text' />
             </div>
           </div>
           <div id='tableContainer'>
-            <div id='tableHead'>
+            <div className='pastOrderTableHead'>
               <div id="item">OrderId</div>
               <div id="item">Order Date</div>
               <div id="item">Store Location</div>
@@ -51,27 +63,43 @@ const PastOrders = () => {
             </div>
             {data.map(user =>
             (
-              <table>
-                <tr className="tr">
-                  <td>{user.orderId}</td>
-                  <td>{user.timeStamp}</td>
-                  <td>{JSON.parse(user.storeInfo).address}</td>
-                  <td>{JSON.parse(user.storeInfo).city}</td>
-                  <td>{JSON.parse(user.storeInfo).phone}</td>
-                  <td>10</td>
-                  <td>RS</td>
-                  <td>{user.status}</td>
-                  <td onClick={oncliked()}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                  </svg></td>
-                </tr>
-              </table>
+                <div className="pastOrderItemsRow">
+                  <div>{user.orderId}</div>
+                  <div>{user.timeStamp}</div>
+                  <div>{JSON.parse(user.storeInfo).address}</div>
+                  <div>{JSON.parse(user.storeInfo).city}</div>
+                  <div>{JSON.parse(user.storeInfo).phone}</div>
+                  <div>10</div>
+                  <div>RS</div>
+                  <div>{user.status}</div>
+                  <div>
+                    <img
+                      orderId={user.orderId}
+                      src="/images/eye.svg"
+                      onClick={handleDelete}
+                    />
+                  </div>
+                </div>
             ))}
           </div>
         </div>
-        <Footer />
+        </div>
       </div>
+      <Footer />
+      {deletePopup ? 
+      <AfterDelete
+        deletePopup={deletePopup}
+        setDeletePopup={setDeletePopup}
+        confirmDeletePopup={confirmDeletePopup}
+        setConfirmDeletePopup={setConfirmDeletePopup}
+        orderDetails={deletePopupInfo}
+      /> : ""}
+      {confirmDeletePopup ? 
+      <ConfirmDelete
+        trigger={confirmDeletePopup}
+        setTrigger={setConfirmDeletePopup}
+        orderId={deletePopupInfo[0].orderId}
+      /> : ""}
     </>
   )
 }

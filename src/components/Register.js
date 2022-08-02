@@ -96,7 +96,7 @@ function Register(props) {
                                 <input
                                     className='register-input-field'
                                     type="text"
-                                    placeholder='sample name'
+                                    placeholder='Name'
                                     value={name}
                                     onChange={(event) => setName(event.target.value)}
                                 />
@@ -106,7 +106,7 @@ function Register(props) {
                                 <input
                                     className='register-input-field'
                                     type="text"
-                                    placeholder='suraj10@gmail.com'
+                                    placeholder='Email'
                                     value={email}
                                     onChange={(event) => setEmail(event.target.value)}
 
@@ -116,7 +116,7 @@ function Register(props) {
                                 <input
                                     className='register-input-field'
                                     type="text"
-                                    placeholder='89 18 63 06 43'
+                                    placeholder='Phone number'
                                     value={phone}
                                     onChange={(event) => setPhone(event.target.value)}
 
@@ -127,7 +127,7 @@ function Register(props) {
                                 <input
                                     className='register-input-field'
                                     type="text"
-                                    placeholder='West Bengal'
+                                    placeholder='State'
                                     value={state}
                                     onChange={(event) => setState(event.target.value)}
 
@@ -140,7 +140,7 @@ function Register(props) {
                                 <input
                                     className='register-input-field'
                                     type="text"
-                                    placeholder='Burdwan'
+                                    placeholder='District'
                                     value={district}
                                     onChange={(event) => setDistrict(event.target.value)}
 
@@ -151,7 +151,7 @@ function Register(props) {
                                 <input
                                     className='register-input-field'
                                     type="text"
-                                    placeholder='Near Kali Bari'
+                                    placeholder='Address'
                                     value={address}
                                     onChange={(event) => setAddress(event.target.value)}
 
@@ -162,7 +162,7 @@ function Register(props) {
                                 <input
                                     className='register-input-field'
                                     type="text"
-                                    placeholder='713032'
+                                    placeholder='Pin Code'
                                     value={pincode}
                                     onChange={(event) => setPincode(event.target.value)}
 

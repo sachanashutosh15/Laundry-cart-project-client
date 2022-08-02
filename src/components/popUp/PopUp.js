@@ -39,13 +39,16 @@ const Popup = (props) => {
       alert("Please Choose the Store Location");
       return;
     } else {
-      await axios.post(
-        url,
-        orderDetailsFinal,
-        {
+      const res = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(orderDetailsFinal),
+        headers: {
           "content-type": "application/json",
+          "authorization": `bearer ${localStorage.getItem('token')}`,
         }
-      )
+      })
+      const data = res.json();
+      console.log(data);
       props.setTrigger(prevState => ({popup: false, confirmCardPopup: true}))
     }
 		// await fetch(url, {
