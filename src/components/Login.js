@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./Login.css";
-import { Link, useNavigate } from 'react-router-dom';
-import padlockLogo from "../Images/padlock.svg";
+import { useNavigate } from 'react-router-dom';
+
 
 
 
@@ -11,6 +11,7 @@ function Login(props) {
     const [errorMsg, setErrorMsg] = useState(false);
     const [dataError1, setDataError1] = useState("");
     const [dataError2, setDataError2] = useState(false);
+    const [colorChanger, setColorChanger] = useState(null);
     const navigate = useNavigate();
     let check = "1";
     const [emailormobile, setEmailOrMobile] = useState("");
@@ -50,6 +51,7 @@ function Login(props) {
                 if (data.error) {
                     console.log("singh");
                     setDataError1(data.error);
+                    setColorChanger(0);
                     setDataError2(true);
                     setTimeout(() => {
                         setDataError2(false);
@@ -58,6 +60,7 @@ function Login(props) {
                 else {
                     localStorage.setItem("token", data.token)
                     localStorage.setItem("userInfo", JSON.stringify(data.userInfo));
+                    setColorChanger(1);
                     setDataError1(data.result);
                     setDataError2(true);
                     setTimeout(() => {
@@ -75,18 +78,16 @@ function Login(props) {
 
         <>
             <div className='main-section-1'>
-                <div style={{ backgroundColor: "white" }}>
-                    <div className='section-div-1'>
-                        <div className='inner-div-1'>
-                            <div className='laundry-text-1'>
-                                <h1 >Laundry <br />
-                                    Services</h1>
-                            </div>
-                            <div className='door-step-text-1'><h5>Doorstep Wash <span>&#38;</span> DryClean Service</h5></div>
-                            <div className='do-not-account-text'><h6>Don't Have An Account</h6></div>
-                            <div >
-                                <button className='register-btn-1' onClick={buttonClickHandler}>Register</button>
-                            </div>
+                <div className='section-div-1'>
+                    <div className='inner-div-1'>
+                        <div className='laundry-text-1'>
+                            <h1 >Laundry <br />
+                                Services</h1>
+                        </div>
+                        <div className='door-step-text-1'><h5>Doorstep Wash <span>&#38;</span> DryClean Service</h5></div>
+                        <div className='do-not-account-text'><h6>Don't Have An Account</h6></div>
+                        <div >
+                            <button className='register-btn-1' onClick={buttonClickHandler}>Register</button>
                         </div>
                     </div>
                 </div>
@@ -100,7 +101,7 @@ function Login(props) {
                     <div>
                         <div className='inner-div-2'>
                             <div className='backend-msg'>
-                                <div>{dataError2===false?"":dataError1}</div>
+                                <div style={{ color: colorChanger === 0 ? "red" : "green" }}>{dataError2 === false ? "" : dataError1}</div>
                             </div>
                             <div className='sign-heading-text-2-div'>
                                 <h4 className='sign-heading-text-2'>SIGN IN</h4>
@@ -112,6 +113,7 @@ function Login(props) {
                                         <br />
                                         <br />
                                         <input
+                                            style={{ color: errorMsg === true ? "#EF1A1A" : "#989898", borderColor: errorMsg === true ? "#EF1A1A" : "#989898" }}
                                             className='box-input-field-2'
                                             type="text"
                                             placeholder='89 18 63 06 43'
@@ -122,7 +124,7 @@ function Login(props) {
                                             }}
                                         />
                                     </div>
-                                    {errorMsg && <div className='error-correction-page-1-div'><div className='error-correction-page-1-text'>Enter a valid email/phone</div></div>}
+                                    {errorMsg && <div className='error-correction-page-1-div'><div className='error-correction-page-1-text'>Please enter a valid email/phone</div></div>}
                                     <TogglePassword password={password} setPassword={setPassword} />
                                 </div>
                             </div>
