@@ -1,151 +1,7 @@
-/* section {
-    display: flex;
-    border-bottom: 2px solid #5861AE;
-    box-sizing: border-box;
-}
 
-aside {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    width: 50vw;
-}
-
-article {
-    width: 50vw;
-    background-color: #B9C0FD1A;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-}
-
-article,
-aside {
-    height: 80vh;
-}
-
-.combined-1 {
-    margin: 0 auto;
-    margin-top: -60px;
-    margin-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-}
-
-.combined-2 {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 30px;
-    margin: 0 195px;
-}
-
-.register {
-    margin-top: 20px;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 30px;
-    border: 2px solid #4552C1;
-    border-radius: 4px;
-    opacity: 1;
-    box-sizing: border-box;
-    text-align: center;
-    font: normal normal bold 15px/20px Open Sans;
-    letter-spacing: 0.3px;
-    color: #4552C1;
-    opacity: 1;
-}
-
-.laundry-service-heading-text {
-    font: normal normalAvenir;
-    letter-spacing: 0px;
-    color: #5861AE;
-    text-transform: capitalize;
-    opacity: 1;
-}
-
-input:focus {
-    border-bottom: 1px solid rgb(29, 27, 175);
-    box-shadow: 0 1px 0 0 rgb(29, 27, 175);
-}
-
-
-
-
-
-.padlock-img:hover {
-    cursor: pointer;
-}
-
-
-
-.side-border {
-    border-left: 2px solid #9097db;
-    box-sizing: border-box;
-}
-
-.form-div {
-    margin-left: 140px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.sign-in-text-div {
-    font: normal normal medium 32px/60px Avenir;
-    letter-spacing: 1.28px;
-    color: #4552C1;
-    text-transform: uppercase;
-    opacity: 1;
-    margin-left: 80px;
-    margin-bottom: 30px;
-}
-
-.mobile-email-text,
-.password-text {
-    font: normal normal normal 12px/15px Open Sans;
-    letter-spacing: 0.42px;
-    color: #5861AE;
-    opacity: 1;
-}
-
-.forget-password-text {
-    font: normal normal medium 16px/26px Avenir;
-    letter-spacing: 0.64px;
-    color: #4552C1;
-    text-transform: capitalize;
-    opacity: 1;
-    margin-left: 258px;
-}
-
-.sign-in-button-div {
-    margin-left: 230px;
-}
-
-.sign-in-button-div button {
-    background: #5861AE 0% 0% no-repeat padding-box;
-    opacity: 1;
-    width: 150px;
-    height: 50px;
-    color: white;
-}
-
-.terms-conditions-text {
-    text-decoration: underline;
-    font: normal normal normal 14px/20px Open Sans;
-    letter-spacing: 0.49px;
-    color: #5861AE;
-    opacity: 1;
-} */
 
 .main-section-3 {
     display: flex;
-    background: #B9C0FD1A 0% 0% no-repeat padding-box;
     opacity: 1;
 }
 
@@ -154,13 +10,10 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 7.5rem 0;
+    padding-top: 12.6rem;
+    padding-bottom: 3rem;
+    opacity: 1;
 }
-
-/* .inner-div-1 {
-    border: 2px solid black;
-    box-sizing: border-box;
-} */
 
 .laundry-text-3 {
     text-align: left;
@@ -169,7 +22,7 @@ input:focus {
     color: #5861AE;
     text-transform: capitalize;
     opacity: 1;
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 0.7rem;
 }
 
@@ -181,7 +34,7 @@ input:focus {
     text-transform: capitalize;
     opacity: 1;
     font-size: 1.5rem;
-    margin-bottom: 4.5rem;
+    margin-bottom: 6rem;
 }
 
 .already-account-text {
@@ -204,72 +57,129 @@ input:focus {
     color: #4552C1;
     opacity: 1;
     margin-left: -0.05rem;
+    padding: 0.4rem 1.4rem;
 }
 
 
 .section-div-4 {
     width: 72vw;
-    padding:0 5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    background: #B9C0FD1A 0% 0% no-repeat padding-box;
+    opacity: 1;
+    padding-bottom: 2rem;
 }
-.register-text-div{
+
+.register-text-div {
     font: normal normal medium 32px/60px Avenir;
-letter-spacing: 1.28px;
-color: #5861AE;
-text-transform: uppercase;
-opacity: 1;
-font-size:2rem;
+    letter-spacing: 1.28px;
+    color: #5861AE;
+    text-transform: uppercase;
+    opacity: 1;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding: 0rem 5rem;
 }
-.form-parent{
-    display:flex;
+
+.form-parent-container {
+    padding: 0rem 5rem;
+    box-sizing: border-box;
+    border-left: 2px solid #4552C1
+}
+
+.form-parent {
+    display: flex;
     justify-content: space-between;
+    margin-top: 1rem;
+
 }
 
-.form-child-1{
-    display:flex;
+.form-child-1 {
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-right:1rem;
-}
-.form-child-2{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-left:1rem;
+    margin-right: 1rem;
 }
 
-.register-input-field{
+.form-child-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 1rem;
+}
+
+.register-input-field {
     border: none;
     border-bottom: 2px solid #989898;
     width: 24rem;
     opacity: 1;
-    background-color:#F8F9FF;
+    background-color: #F8F9FF;
     font-size: 1.4rem;
-    margin-bottom:3rem;
+    margin-bottom: 3rem;
+    font: normal normal normal 17px/27px Open Sans;
+    letter-spacing: 0.6px;
+    color: #424548;
 }
 
-.terms-condition-div{
+.terms-condition-div {
     display: flex;
     justify-content: center;
     text-decoration: underline;
-font: normal normal normal 14px/20px Open Sans;
-letter-spacing: 0.49px;
-color: #5861AE;
-opacity: 1;
+    font: normal normal normal 14px/20px Open Sans;
+    letter-spacing: 0.49px;
+    color: #5861AE;
+    opacity: 1;
 }
-.register-div{
+
+.register-div {
     display: flex;
     justify-content: center;
-} 
-.padlock-img2 {
-    transform: translate(-100%, 0);
 }
+
+.register-div-button {
+    background: #5861AE 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    text-align: center;
+    font: normal normal bold 15px/20px Open Sans;
+    letter-spacing: 0.3px;
+    color: #FFFFFF;
+    opacity: 1;
+    padding: 0.5rem 1.8rem;
+}
+
+.padlock-img2 {
+    transform: translate(-100%, 6%);
+}
+
 .lock-input-container2 {
     display: flex;
     justify-content: center;
 }
-.register-checkbox{
-    
+
+.backend-msg2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 0 8rem;
+}
+
+.error-correction-page-2-div {
+    width: 24rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+    font: italic normal normal 12px/27px Open Sans;
+    letter-spacing: 0.42px;
+    color: #EF1A1A;
+    font-size: 0.8rem;
+    margin-top: -3rem;
+}
+
+input.register-checkbox {
+    margin-right: 1rem;
+    height: 1rem;
+    width: 1rem;
 }
