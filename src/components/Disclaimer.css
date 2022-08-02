@@ -8,9 +8,9 @@
     border: 1px solid black;
     box-sizing: border-box;
     padding:4rem 6rem;
-
-    background-position: center bottom;
-
+    /* background-position: center bottom; */
+    background-position:100% 100%;
+    background-size: cover;
 }
 .inside-disclaimer-div{
     display: flex;
