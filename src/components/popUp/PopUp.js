@@ -33,7 +33,7 @@ const Popup = (props) => {
     }
   ]
 
-	const url = "http://localhost:3001/newOrder";
+	const url = "https://laundrycart--server.herokuapp.com/newOrder";
 
 	async function handleSubmit () {
     if (orderDetailsFinal.storeInfo === "") {

@@ -9,7 +9,7 @@ import ConfirmDelete from "../../components/popupDelete/confirmDeletePopup";
 import TakeOrder from "../TakeOrder/TakeOrder";
 const PastOrders = () => {
   const pickupCharges = 90;
-  const url = 'http://localhost:3001/orders';
+  const url = 'https://laundrycart--server.herokuapp.com/orders';
   const [data, setData] = useState([]);
   const [deletePopup, setDeletePopup] = useState(false);
   const [deletePopupInfo, setDeletePopupInfo] = useState({});
@@ -35,7 +35,7 @@ const PastOrders = () => {
   }, [confirmDeletePopup])
 
   React.useEffect(() => {
-    fetch ("http://localhost:3001/userinfo", {
+    fetch ("https://laundrycart--server.herokuapp.com/userinfo", {
       method: "GET",
       headers: {
         "authorization": `bearer ${localStorage.getItem('token')}`

@@ -22,7 +22,7 @@ function Login(props) {
                 return;
             }
         }
-        fetch("http://localhost:3001/login", {
+        fetch("https://laundrycart--server.herokuapp.com/login", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"

@@ -43,7 +43,7 @@ const OrderCreatorDiv = () => {
   const [userData, setUserData] = React.useState("");
 
   React.useEffect(() => {
-    fetch ("http://localhost:3001/userinfo", {
+    fetch ("https://laundrycart--server.herokuapp.com/userinfo", {
       method: "GET",
       headers: {
         "authorization": `bearer ${localStorage.getItem('token')}`

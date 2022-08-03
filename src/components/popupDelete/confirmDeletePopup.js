@@ -4,7 +4,7 @@ import './confirmDelete.css';
 const confirmDelete = props => {
 
   async function cancelOrder () {
-    await fetch ("http://localhost:3001/orders", {
+    await fetch ("https://laundrycart--server.herokuapp.com/orders", {
       method: "DELETE",
       body: JSON.stringify({orderId: props.orderId}),
       headers: {

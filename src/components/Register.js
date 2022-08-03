@@ -40,7 +40,7 @@ function Register(props) {
                 setPhoneErrorMsg(true);
                 return;
             }
-            fetch("http://localhost:3001/register", {
+            fetch("https://laundrycart--server.herokuapp.com/register", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json"
