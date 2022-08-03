@@ -40,6 +40,21 @@ const OrderCreatorDiv = () => {
     },
   ];
 
+  const [userData, setUserData] = React.useState("");
+
+  React.useEffect(() => {
+    fetch ("http://localhost:3001/userinfo", {
+      method: "GET",
+      headers: {
+        "authorization": `bearer ${localStorage.getItem('token')}`
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      setUserData(data)
+    })
+  },[])
+
   const initialState = {};
   for (let i = 0; i < itemsArray.length; i++) {
     let name = itemsArray[i].name;
@@ -116,7 +131,7 @@ const OrderCreatorDiv = () => {
           </button>
         </div>
       </div>
-      <Popup trigger={popups} setTrigger={setPopups} orderDetails={filteredOrderDetails} />
+      <Popup trigger={popups} setTrigger={setPopups} userAddress={userData} orderDetails={filteredOrderDetails} />
       <ConfirmCard trigger={popups} setTrigger={setPopups} />
     </>
   );

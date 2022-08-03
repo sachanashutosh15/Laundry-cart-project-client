@@ -1,29 +1,99 @@
 .pastOrderItemsRow {
   display: flex;
+  padding: 1rem 1rem;
   justify-content: space-between;
-  padding: 0 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: none;
 }
+
 #orderCreator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 95%;
-    float: right;
-    /* padding: 0 2rem; */
-    background-color: rgba(245, 245, 245, 1);
-  }
-#item {
-    margin: 0px 10px;
-    width: 131px;
-}
-.TwoDiv{
-    background-color: rgba(245, 245, 245, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  float: right;
+  background-color: rgba(245, 245, 245, 1);
 }
 
 .textDiv {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em 0;
-    width: 100%;
-    margin-bottom: -17px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0;
+  width: 100%;
+  margin-bottom: -17px;
+}
+
+.pastOrderTableHead {
+  display: flex;
+  background-color: #1E2022;
+  color: white;
+  padding: 1rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pastOrderTable-orderId {
+  width: 6rem;
+}
+
+.pastOrderTable-date {
+  width: 10rem;
+}
+
+.pastOrderTable-StoreLocation {
+  width: 10rem;
+}
+
+.pastOrderTable-City {
+  width: 6rem;
+}
+
+.pastOrderTable-storePhone {
+  width: 8rem;
+}
+
+.pastOrderTable-totalItems {
+  width: 4rem;
+}
+
+.pastOrderTable-price {
+  width: 4rem;
+}
+
+.pastOrderTable-status {
+  width: 13rem;
+}
+
+.pastOrderTable-view {
+  width: 4rem;
+}
+
+.cancelNStatus {
+  width: 13rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#searchInput {
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 3px;
+  background-color: rgba(245, 245, 245, 1);
+}
+
+.Button1 {
+  width: 77px;
+  height: 26px;
+  margin-bottom: 15px;
+  color: #5861AE;
+  border: 1px solid #5861AE;
+  border-radius: 4px;
+}
+
+.Delete {
+  color: red;
+}
+
+#tableInfoContainer > div:nth-child(odd) {
+  background-color: white;
 }

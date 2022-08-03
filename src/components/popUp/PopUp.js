@@ -1,6 +1,5 @@
 import React from "react";
 import "./PopUp.css";
-import axios from "axios";
 
 const Popup = (props) => {
   const orderDetails = props.orderDetails;
@@ -23,12 +22,14 @@ const Popup = (props) => {
     {
       name: "JP nagar",
       address: "Near phone booth, 10th Road",
-      phone: "+91 9786543210"
+      phone: "+91 9786543210",
+      city: "Bangalore"
     },
     {
       name: "Kanpur",
       address: "Yashoda Nagar, Bypass",
-      phone: "+91 98374678234"
+      phone: "+91 98374678234",
+      city: "Kanpur"
     }
   ]
 
@@ -140,6 +141,18 @@ const Popup = (props) => {
             </div>
           </div>
         </div>
+          <div className="addressContainer">
+              <p style={{fontSize:"10px", margin: "0.5rem 0"}}>Address</p>
+              <div className="addressCard">
+                <div className="addressCard-content">
+                  <div className="addressCard-checkedContainer">
+                    <h6>Home</h6>
+                    <img src="/images/check-circle-fill.svg" />
+                  </div>
+                  <p style={{marginTop: "0.5rem"}}>{props.userAddress.address}</p>
+                </div>
+              </div>
+          </div>
         <div className="popupFooter">
 					<button
 						className="button"

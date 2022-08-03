@@ -1,20 +1,11 @@
 import React, { useState } from 'react';
 import "./Register.css";
-
-
-
-
 function Register(props) {
-
-
     const [emailErrorMsg, setEmailErrorMsg] = useState(false);
     const [PhoneErrorMsg, setPhoneErrorMsg] = useState(false);
     const [dataError1, setDataError1] = useState("");
     const [dataError2, setDataError2] = useState(false);
     const [colorChanger, setColorChanger] = useState(null);
-
-
-
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -23,14 +14,11 @@ function Register(props) {
     const [district, setDistrict] = useState("");
     const [address, setAddress] = useState("");
     const [pincode, setPincode] = useState("");
-
     const [checkValue, setCheckValue] = useState(null);
     const value = true;
-
     const buttonClickHandler = () => {
         props.passData(value);
     }
-
     function ClickHandler(e) {
         if (e.target.checked == true) {
             console.log("hi");
@@ -40,7 +28,6 @@ function Register(props) {
         console.log("ho");
         setCheckValue(false);
     }
-
     const register = (e) => {
         if (checkValue === true) {
             if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
@@ -48,7 +35,6 @@ function Register(props) {
                 setEmailErrorMsg(true);
                 return;
             }
-
             if (!/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(phone)) {
                 console.log("hello suraj");
                 setPhoneErrorMsg(true);
@@ -102,13 +88,9 @@ function Register(props) {
         else {
             alert("kindly accept the terms and conditions");
         }
-
     }
-
-
     return (
         <>
-
             <div className='main-section-3'>
                 <div className='section-div-3'>
                     <div className='inner-div-3'>
@@ -124,9 +106,6 @@ function Register(props) {
                         </div>
                     </div>
                 </div>
-
-
-
                 <div className='section-div-4'>
                     <div className='backend-msg2'>
                         <div style={{ color: colorChanger === 0 ? "#EF1A1A" : "green" }}>
@@ -139,7 +118,6 @@ function Register(props) {
                     <div className='form-parent-container'>
                         <div className='form-parent'>
                             <div className='form-child-1' >
-
                                 <div>
                                     <input
                                         className='register-input-field'
@@ -159,35 +137,27 @@ function Register(props) {
                                             setPhone(event.target.value);
                                             setPhoneErrorMsg(false);
                                         }}
-
                                     />
                                     {PhoneErrorMsg && <div className='error-correction-page-2-div'><div className='error-correction-page-2-text'>Enter a valid phone number</div></div>}
                                 </div>
                                 <div >
-
                                     <input
                                         className='register-input-field'
                                         type="text"
                                         placeholder='District'
                                         value={district}
                                         onChange={(event) => setDistrict(event.target.value)}
-
                                     />
                                 </div>
                                 <div >
-
                                     <input
                                         className='register-input-field'
                                         type="text"
                                         placeholder='Pincode'
                                         value={pincode}
                                         onChange={(event) => setPincode(event.target.value)}
-
                                     />
-
                                 </div>
-
-
                             </div>
                             <div className='form-child-2'>
                                 <div >
@@ -200,39 +170,30 @@ function Register(props) {
                                             setEmail(event.target.value);
                                             setEmailErrorMsg(false);
                                         }}
-
                                     />
                                     {emailErrorMsg && <div className='error-correction-page-2-div'><div className='error-correction-page-2-text'>Enter a valid email</div></div>}
                                 </div>
-
                                 <div >
                                     <TogglePassword password={password} setPassword={setPassword} />
                                 </div>
-
                                 <div >
-
                                     <input
                                         className='register-input-field'
                                         type="text"
                                         placeholder='State'
                                         value={state}
                                         onChange={(event) => setState(event.target.value)}
-
                                     />
                                 </div>
-
                                 <div >
-
                                     <input
                                         className='register-input-field'
                                         type="text"
                                         placeholder='Address'
                                         value={address}
                                         onChange={(event) => setAddress(event.target.value)}
-
                                     />
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -247,7 +208,6 @@ function Register(props) {
                     </div>
                 </div>
             </div>
-
         </>
     )
 }
@@ -274,12 +234,7 @@ const TogglePassword = ({ password, setPassword }) => {
                     {toggle === false ? <i class="fa-solid fa-lock"></i> : <i class="fa-solid fa-lock-open"></i>}
                 </span>
             </div>
-
         </>
     );
 }
-
-
-
-
 export default Register

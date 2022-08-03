@@ -147,3 +147,24 @@ h6 {
 .popupFooter > .button:hover {
   outline: 1px solid #5861ae;
 }
+
+.addressContainer {
+  padding: 0.5rem 2rem;
+}
+
+.addressCard {
+  height: 6rem;
+  width: 15rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  box-shadow: 0px 0px 7px  rgba(0, 0, 0, 0.5);
+}
+
+.addressCard-content {
+  margin: 0.5rem;
+}
+
+.addressCard-checkedContainer {
+  display: flex;
+  justify-content: space-between;
+}

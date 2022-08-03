@@ -3,10 +3,8 @@ import React from "react";
 import './confirmDelete.css';
 const confirmDelete = props => {
 
-  const url = "http://localhost:3001/orders"
-
   async function cancelOrder () {
-    await fetch (url, {
+    await fetch ("http://localhost:3001/orders", {
       method: "DELETE",
       body: JSON.stringify({orderId: props.orderId}),
       headers: {

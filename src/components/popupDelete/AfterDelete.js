@@ -1,8 +1,5 @@
-import { useEffect, useState, } from "react";
-import { useLocation } from "react-router-dom";
 import React from "react";
 import "./popUpAfterDelete.css";
-import { Link } from 'react-router-dom';
 
 const AfterDelete = (props) => {
 
