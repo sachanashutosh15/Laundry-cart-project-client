@@ -15,6 +15,7 @@ const PastOrders = () => {
   const [deletePopupInfo, setDeletePopupInfo] = useState({});
   const [confirmDeletePopup, setConfirmDeletePopup] = useState(false);
   const [userData, setUserData] = React.useState("");
+  const [searchId, setSearchId] = React.useState("");
   // const orderDetails = props.orderDetails[0];
   // const storeInfo = JSON.parse(orderDetails.storeInfo);
   // const items = JSON.parse(orderDetails.items);
@@ -61,6 +62,21 @@ const PastOrders = () => {
     let targetOrderId = e.target.attributes.orderId.value;
     setDeletePopupInfo(data.filter(order => order.orderId === targetOrderId));
   }
+
+  function handleChange(e) {
+    const { value } = e.target;
+    setSearchId(value);
+  }
+
+  function handleFilter () {
+    const filteredData = data.filter(order => order.orderId === searchId);
+    if (filteredData.length === 0) {
+      alert("Please Enter a valid Order Id")
+      return;
+    }
+    setData(data.filter(order => order.orderId === searchId))
+  }
+
   return (
     <>
       <TopNavBar userName={userData.name} />
@@ -75,7 +91,14 @@ const PastOrders = () => {
             <div className="pastOrderSearchContainer">
               <Link to='/user/newOrder' state={userData.name}><button className="Button1">Create</button></Link>
               <img className='lensImg' src="/images/search.svg" />
-              <input id="searchInput" type='text' />
+              <input
+                id="searchInput"
+                type='text'
+                onChange={handleChange}
+                name="searchId"
+                value={searchId}
+              />
+              <button className="Button1" onClick={handleFilter}> Search </button>
             </div>
           </div>
           <div id='tableContainer'>

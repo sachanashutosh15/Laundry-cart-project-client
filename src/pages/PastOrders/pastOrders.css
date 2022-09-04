@@ -78,7 +78,9 @@
   border: none;
   border-bottom: 1px solid black;
   margin-bottom: 3px;
+  margin-right: 5px;
   background-color: rgba(245, 245, 245, 1);
+  height: 26px;
 }
 
 .Button1 {

@@ -10,7 +10,6 @@ import LoginTest from './pages/LoginPage/loginTest';
 function App() {
   return (
     <BrowserRouter>
-    
       <Routes>
         <Route path="/" element={<FrontPage />} />
         <Route path='/user/orders' element={ <PastOrders /> } />
